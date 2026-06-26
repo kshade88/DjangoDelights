@@ -5,6 +5,8 @@ from django.contrib.auth import login, logout, authenticate
 from django.urls import reverse_lazy
 
 # Create your views here.
+def home(request):
+    return render(request, 'inventory/home.html')
 
 class SignUpView(CreateView):
     form_class = UserCreationForm
@@ -15,7 +17,7 @@ def logout_view(request):
     logout(request)
     return redirect('login')
 
- 
+
 
 
 
