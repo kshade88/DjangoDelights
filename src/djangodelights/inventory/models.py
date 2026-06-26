@@ -27,7 +27,7 @@ class RecipeRequirement(models.Model):
     def __str__(self):
         return f"{self.quantity_required} {self.ingredient.unit} of {self.ingredient.name} for {self.menu_item.name}"
 
-class Purchases(models.Model):
+class Purchase(models.Model):
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_date = models.DateTimeField(auto_now_add=True)
