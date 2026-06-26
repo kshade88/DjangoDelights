@@ -1,3 +1,11 @@
 # Ingredient Form
 <h2>Ingredient Form</h2>
 
+<h2>Add Ingredient to Inventory</h2>
+    <form method="post">
+    <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit"/>
+    </div>
+    </form>

@@ -45,7 +45,7 @@ class IngredientCreateView(CreateView):
     model = Ingredient
     form_class = IngredientForm
     template_name = 'inventory/ingredient_form.html'
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('ingredient_list')
 
 class MenuItemCreateView(CreateView):
     model = MenuItem
