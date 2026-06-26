@@ -28,12 +28,12 @@ class IngredientListView(ListView):
 
 class MenuItemListView(ListView):
     model = MenuItem
-    template_name = 'inventory/menuitem_list.html'
+    template_name = 'inventory/menu_item_list.html'
     context_object_name = 'menu_items'
 
 class RecipeRequirementListView(ListView):
     model = RecipeRequirement
-    template_name = 'inventory/reciperequirement_list.html'
+    template_name = 'inventory/recipe_requirement_list.html'
     context_object_name = 'reciperequirements'
 
 class PurchaseListView(ListView):
