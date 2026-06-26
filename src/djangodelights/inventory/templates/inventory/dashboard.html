@@ -1,6 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Welcome {{ user.username }}!</h1>
 
-<a href="{% url 'ingredient_list' %}">View Ingredients</a>
-<a href="{% url 'menu_item_list' %}">View Menu Items</a>
-<a href="{% url 'purchase_list' %}">View Purchases</a>
-<a href="{% url 'recipe_requirement_list' %}">View Recipe Requirements</a>
+<a href="{% url 'ingredient_list' %}">Ingredients</a>
+<br>
+<a href="{% url 'menu_item_list' %}">Menu Items</a>
+<br>
+<a href="{% url 'purchase_list' %}">Purchases</a>
+<br>
+<a href="{% url 'recipe_requirement_list' %}">Recipe Requirements</a>
+
+{% endblock %}

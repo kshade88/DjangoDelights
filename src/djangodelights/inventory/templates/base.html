@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Delights</title>
+</head>
+<body>
+    <header>
+        <h1>Django Delights</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'ingredient_list' %}">Ingredients</a></li>
+                <li><a href="{% url 'menu_item_list' %}">Menu Items</a></li>
+                <li><a href="{% url 'purchase_list' %}">Purchases</a></li>
+                <li><a href="{% url 'recipe_requirement_list' %}">Recipe Requirements</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

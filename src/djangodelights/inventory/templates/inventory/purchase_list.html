@@ -1,1 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h2>Purchases</h2>
+
+<a href="{% url 'purchase_add' %}">Add New Purchase</a>
+
+<ul>
+    {% for purchase in purchases %}
+        <li>{{ purchase.menu_item.name }} - ${{ purchase.menu_item.price }} - {{ purchase.purchase_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,4 +1,7 @@
-<h2>Add Menu Item</h2>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Add Menu Item</h2>
     <form method="post">
     <div>
     {% csrf_token %}
@@ -6,3 +9,4 @@
     <input type="submit" value="Submit"/>
     </div>
     </form>
+{% endblock %}

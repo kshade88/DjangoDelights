@@ -1,1 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h2>Menu Items </h2>
+
+<a href="{% url 'menu_item_add' %}">Add New Menu Item</a>
+
+<ul>
+    {% for menu_item in menu_items %}
+        <li>{{ menu_item.name }} - ${{ menu_item.price }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

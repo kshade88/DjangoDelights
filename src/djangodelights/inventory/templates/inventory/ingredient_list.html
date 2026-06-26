@@ -1,7 +1,13 @@
-<h2>Ingredients</h2>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Ingredients</h2>
+
+    <a href="{% url 'ingredient_add' %}">Add New Ingredient</a>
 
 <ul>
     {% for ingredient in ingredients %}
         <li>{{ ingredient.name }} - {{ ingredient.quantity }} {{ ingredient.unit }} - ${{ ingredient.unit_price }}</li>
     {% endfor %}
 </ul>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Recipe Requirements</h1>
+
+    <a href="{% url 'recipe_requirement_add' %}">Add New Recipe Requirement</a>
+
+    <ul>
+        {% for recipe_requirement in recipe_requirements %}
+            <li>{{ recipe_requirement.quantity_required }} - {{ recipe_requirement.ingredient.name }} for {{ recipe_requirement.menu_item.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

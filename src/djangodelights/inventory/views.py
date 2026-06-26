@@ -34,7 +34,7 @@ class MenuItemListView(ListView):
 class RecipeRequirementListView(ListView):
     model = RecipeRequirement
     template_name = 'inventory/recipe_requirement_list.html'
-    context_object_name = 'reciperequirements'
+    context_object_name = 'recipe_requirements'
 
 class PurchaseListView(ListView):
     model = Purchase
@@ -51,19 +51,19 @@ class MenuItemCreateView(CreateView):
     model = MenuItem
     form_class = MenuItemForm
     template_name = 'inventory/menu_item_form.html'
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('menu_item_list')
 
 class RecipeRequirementCreateView(CreateView):
     model = RecipeRequirement
     form_class = RecipeRequirementForm
     template_name = 'inventory/recipe_requirement_form.html'
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('recipe_requirement_list')
 
 class PurchaseCreateView(CreateView):
     model = Purchase
     form_class = PurchaseForm
     template_name = 'inventory/purchase_form.html'
-    success_url = reverse_lazy('dashboard')
+    success_url = reverse_lazy('purchase_list')
 
 class IngredientUpdateView(UpdateView):
     model = Ingredient
