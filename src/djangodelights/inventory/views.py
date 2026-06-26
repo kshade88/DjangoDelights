@@ -13,6 +13,9 @@ class SignUpView(CreateView):
     template_name = 'registration/signup.html'
     success_url = reverse_lazy('login')
 
+def dashboard(request):
+    return render(request, 'inventory/dashboard.html')
+
 def logout_view(request):
     logout(request)
     return redirect('login')
