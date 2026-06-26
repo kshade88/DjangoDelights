@@ -6,6 +6,7 @@ class Ingredient(models.Model):
     name = models.CharField(max_length=100)
     quantity = models.IntegerField()
     unit = models.CharField(max_length=50)
+    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
         return f"{self.name} ({self.quantity} {self.unit})"
@@ -14,7 +15,6 @@ class MenuItem(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    ingredients = models.ManyToManyField(Ingredient)
 
     def __str__(self):
         return self.name
