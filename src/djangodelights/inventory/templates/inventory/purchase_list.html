@@ -8,7 +8,8 @@
 
 <ul>
     {% for purchase in purchases %}
-        <li>{{ purchase.menu_item.name }} - ${{ purchase.menu_item.price }} - {{ purchase.purchase_date }}</li>
+        <li>{{ purchase.quantity }} x {{ purchase.menu_item.name }} - ${{ purchase.menu_item.price }} - {{ purchase.purchase_date }}</li>
+        <li>{{ purchase.total_cost }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

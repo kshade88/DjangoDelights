@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 
 class Ingredient(models.Model):
@@ -7,6 +7,9 @@ class Ingredient(models.Model):
     quantity = models.IntegerField()
     unit = models.CharField(max_length=50)
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
+
+    def get_absolute_url(self):
+        return reverse('ingredients')
 
     def __str__(self):
         return f"{self.name} ({self.quantity} {self.unit})"
@@ -16,6 +19,9 @@ class MenuItem(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
+    def get_absolute_url(self):
+        return reverse('menu_items')
+
     def __str__(self):
         return self.name
 
@@ -24,6 +30,9 @@ class RecipeRequirement(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
     quantity_required = models.IntegerField()
 
+    def get_absolute_url(self):
+        return reverse('recipe_requirements')
+
     def __str__(self):
         return f"{self.quantity_required} {self.ingredient.unit} of {self.ingredient.name} for {self.menu_item.name}"
 
@@ -31,6 +40,12 @@ class Purchase(models.Model):
     menu_item = models.ForeignKey(MenuItem, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     purchase_date = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('purchases')
+
+    def total_cost(self):
+        return self.menu_item.price * self.quantity
 
     def __str__(self):
         return f"{self.quantity} x {self.menu_item.name} purchased on {self.purchase_date}"
