@@ -50,13 +50,13 @@ class IngredientCreateView(CreateView):
 class MenuItemCreateView(CreateView):
     model = MenuItem
     form_class = MenuItemForm
-    template_name = 'inventory/menuitem_form.html'
+    template_name = 'inventory/menu_item_form.html'
     success_url = reverse_lazy('dashboard')
 
 class RecipeRequirementCreateView(CreateView):
     model = RecipeRequirement
     form_class = RecipeRequirementForm
-    template_name = 'inventory/reciperequirement_form.html'
+    template_name = 'inventory/recipe_requirement_form.html'
     success_url = reverse_lazy('dashboard')
 
 class PurchaseCreateView(CreateView):
